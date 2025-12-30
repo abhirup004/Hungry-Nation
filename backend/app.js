@@ -22,7 +22,7 @@ app.get("/meals", async (req, res) => {
 app.post("/orders", async (req, res) => {
   const orderData = req.body.order;
 
-  // ✅ Validate order & items
+  
   if (
     !orderData ||
     !Array.isArray(orderData.items) ||
@@ -33,7 +33,7 @@ app.post("/orders", async (req, res) => {
 
   const customer = orderData.customer;
 
-  // ✅ SAFE customer validation (no crashes)
+  
   if (
     !customer ||
     typeof customer.email !== "string" ||
@@ -79,3 +79,4 @@ app.use((req, res) => {
 app.listen(3000, () => {
   console.log("Backend running at http://localhost:3000");
 });
+
